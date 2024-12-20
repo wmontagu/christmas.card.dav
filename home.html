@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Merry Christmas Daphne!</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-image: url('https://example.com/snowflakes.jpg');
+            background-size: cover;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+            cursor: pointer;
+        }
+        
+        .card:hover {
+            transform: scale(1.02) rotate(1deg);
+        }
+        
+        h1 {
+            color: #d32f2f;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .image-container {
+            margin: 20px 0;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        
+        .christmas-image {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .christmas-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .ps {
+            color: #461010;
+            font-size: 0.8em;
+            line-height: 0.8;
+            margin: 10px 0;
+        }
+
+        .message {
+            color: #103011;
+            font-size: 1.6em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        
+        .heart {
+            color: #000000;
+            font-size: 1.5em;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        
+        #letter {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            display: none;
+            animation: fadeIn 1s;
+            cursor: pointer;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .letter-text {
+            font-family: 'Brush Script MT';
+            font-size: 1.4em;
+            line-height: 1.8;
+            color: #333;
+            text-align: left;
+            padding: 20px;
+        }
+        
+        .signature {
+            font-family: 'Brush Script MT';
+            font-size: 1.6em;
+            color: #d32f2f;
+            text-align: right;
+            margin-top: 30px;
+        }
+
+        
+        #gallery {
+            display: none;
+            animation: fadeIn 1s;
+            cursor: pointer;
+        }
+
+        #gallery .ps {
+            color: #461010;
+            font-size: 1.2em;
+            margin: 20px 0;
+            animation: glow 2s infinite;
+        }
+
+        @keyframes glow {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .caption {
+            transform: translateY(0);
+        }
+    </style>
+    <script>
+        function showLetter() {
+            document.getElementById('card').style.display = 'none';
+            document.getElementById('letter').style.display = 'block';
+        }
+
+        function showGallery() {
+            document.getElementById('letter').style.display = 'none';
+            document.getElementById('gallery').style.display = 'block';
+        }
+
+        function resetToStart() {
+            document.getElementById('gallery').style.display = 'none';
+            document.getElementById('letter').style.display = 'none';
+            document.getElementById('card').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div id="card" class="card" onclick="showLetter()">
+        <h1>Merry Christmas Daphne!</h1>
+        <div class="image-container">
+            <img class="christmas-image" src="images/coverPic.PNG" alt="Christmas Memory">
+        </div>
+        <p class="message">
+            <b>
+                I hope you have an amazing Christmas with your family! Sending many kisses :)
+            </b>
+            <br>
+            <span class="heart">♥♥♥♥♥♥♥♥♥</span>
+        </p>
+        <p class="ps">
+            P.S wait until family gift opening to open card (yes you are reading this aloud in front of your family haha):) ♥
+        </p>
+    </div>
+    
+    <div id="letter" onclick="showGallery()">
+        <div class="letter-text">
+            Dear Daphne,
+            <br><br>
+            Not in a million years would I think to be so lucky to have someone as thoughtful and kind as you. 
+            I really appreciate the care you show to all the people around you: friends, family and peers. You are one of
+            a kind. Your brother is so fortunate to have a big sis like you (sry I had to say it, as a younger brother myself :)).
+            <br><br>
+            Before I meant you, when I thought of the name Daphne, I thought of many things. I thought of the early mornings watching Scooby Doo with my older
+            sister. I thought of my 112 TA (who was also named Daphne) who bombed my grade through giving me a 70% on my term project (I'm still not over it). Now,
+            only you come to mind (and maybe Scooby Doo because of your Finsta).
+            <br><br>
+            Although I do make mistakes, I just want to let you know you are very important to me. I really do mean it when I say you
+            are the most thoughtful person I know. I love the late nights we call, the early mornings we study in the library, and the awkward social interactions
+            we have with other CS and Math majors (I apologize, I am really bad at introducing people). I'd have it no other way.
+            <div class="signature">
+                Merry Christmas with all my love,<br>
+                Will
+            </div>
+        </div>
+        <p class="ps">
+            Made a little photo gallery after, hope you like it :). Click to continue
+        </p>
+    </div>
+
+    <div id="gallery" onclick="resetToStart()">
+        <h1>Photo Gallery :)</h1>
+        <p class="ps">Click anywhere to go back to beginning</p>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="images/IMG_1622.jpg" alt="Memory 1">
+            </div>
+            <div class="gallery-item">
+                <img src="images/IMG_1508.jpg" alt="Memory 2">
+            </div>
+            <div class="gallery-item">
+                <img src="images/IMG_2818.jpg" alt="Memory 3">
+            </div>
+            <div class="gallery-item">
+                <img src="images/IMG_2826.jpg" alt="Memory 4">
+            </div>
+            <div class="gallery-item">
+                <img src="images/IMG_2939.jpg" alt="Memory 5">
+            </div>
+            <div class="gallery-item">
+                <img src="images/8604DDA4-EE38-48F3-9174-8B3D39B90E26.jpg" alt="Memory 6">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
